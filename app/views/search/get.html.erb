@@ -1,0 +1,19 @@
+<%= @debug %>
+<form>
+  <input type="text" method="post" name="query" value="<%= @query %>">
+  <a href="get?query=<%= @query %>&page=<%= @prev_page %>"><%= @prev_page %></a>
+  <span style="margin: 0px 5px 0px 5px;"><%= @page %></span>
+  <a href="get?query=<%= @query %>&page=<%= @next_page %>"><%= @next_page %></a>
+</form>
+<ul>
+<% @items.each do |item| %>
+  <li style="display: inline-block; float: left; padding: 7px;">
+  <a href="<%= item.link %>">
+    <div style="display: inline-block; padding: 3px;">
+      <img src="<%= item.thumbnail %>" title="<%= item.title %>" style="width: 150px;">
+      <!-- <span><%= item.length %></span> -->
+    </div>
+  </a>
+  </li>
+<% end %>
+</ul>
